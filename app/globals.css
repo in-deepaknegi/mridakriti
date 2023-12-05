@@ -2,4 +2,26 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer base {
+  /* Width and height of the scrollbar track */
+  ::-webkit-scrollbar {
+    width: 8px; /* width of the scrollbar */
+    height: 12px; /* height of the scrollbar */
+  }
 
+  /* Handle of the scrollbar (the draggable part) */
+  ::-webkit-scrollbar-thumb {
+    background: #888; /* color of the scrollbar handle */
+    border-radius: 6px; /* roundness of the scrollbar handle */
+  }
+
+  /* Track of the scrollbar (the non-draggable part) */
+  ::-webkit-scrollbar-track {
+    background: #f1f1f1; /* color of the scrollbar track */
+  }
+
+  /* Corner of the scrollbar (if visible) */
+  ::-webkit-scrollbar-corner {
+    background: #f1f1f1; /* color of the scrollbar corner */
+  }
+}
