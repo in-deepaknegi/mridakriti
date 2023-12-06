@@ -3,13 +3,20 @@
 import Image from 'next/image';
 import React, { useState } from 'react'
 import Logo from '@/public/logo.png'
+import { useLanguage } from '@/library/LangChange';
 
 const Navbar = () => {
 
+    const { lang, changeLang } = useLanguage();
+
     const [mobilemenu, setMobileMenu] = useState(false);
+    const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleMobileMenu = () => {
         setMobileMenu(!mobilemenu);
+    }
+    const handleExpand = () => {
+        setIsExpanded(!isExpanded);
     }
 
     return (
@@ -49,7 +56,50 @@ const Navbar = () => {
                     </a>
                 </div>
 
-                
+                <div className='hidden lg:ml-8 lg:flex'>
+                    <svg fill="#e5e7eb" width="42" height="42" viewBox="-6.24 -6.24 36.48 36.48" xmlns="http://www.w3.org/2000/svg" data-name="Layer 1" stroke="#9ca3af" strokeWidth="0.00024000000000000003"><g id="SVGRepo_bgCarrier" strokeWidth="0"></g><g id="SVGRepo_tracerCarrier" strokeLinecap="round" strokeLinejoin="round" stroke="#9ca3af" strokeWidth="0.048"></g><g id="SVGRepo_iconCarrier"><path d="M21.05566,12h-2a1,1,0,0,0,0,2v2H17.8714a2.96481,2.96481,0,0,0,.18426-1A2.99955,2.99955,0,0,0,12.458,13.50049a.99992.99992,0,1,0,1.73242.999A1.0009,1.0009,0,0,1,15.05566,14a1,1,0,0,1,0,2,1,1,0,0,0,0,2,1,1,0,1,1,0,2,1.0009,1.0009,0,0,1-.86523-.49951.99992.99992,0,1,0-1.73242.999A2.99955,2.99955,0,0,0,18.05566,19a2.96481,2.96481,0,0,0-.18426-1h1.18426v3a1,1,0,0,0,2,0V14a1,1,0,1,0,0-2ZM9.08594,11.24268a.99963.99963,0,1,0,1.93945-.48536L9.26855,3.72754a2.28044,2.28044,0,0,0-4.4248,0L3.08594,10.75732a.99963.99963,0,1,0,1.93945.48536L5.58618,9H8.52545ZM6.0863,7l.6969-2.78711a.29222.29222,0,0,1,.5459,0L8.02563,7Zm7.96936,0h1a1.001,1.001,0,0,1,1,1V9a1,1,0,0,0,2,0V8a3.00328,3.00328,0,0,0-3-3h-1a1,1,0,0,0,0,2Zm-4,9h-1a1.001,1.001,0,0,1-1-1V14a1,1,0,0,0-2,0v1a3.00328,3.00328,0,0,0,3,3h1a1,1,0,0,0,0-2Z"></path></g></svg>
+
+                    <button onClick={handleExpand}
+                        className='my-auto text-white flex pl-1 gap-2'>
+                        {lang === 'en' ? (
+                            <div className='mx-1'>English</div>
+                        ) : (
+                            <div className='mx-2'>हिंदी</div>
+                        )
+                        }
+                        <svg className={`my-auto 
+                            ${isExpanded ? 'transform rotate-180' : ''}`}
+                            xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                            <path d="m6 9 6 6 6-6" />
+                        </svg>
+                    </button>
+                    {isExpanded && (
+                        <div className='absolute w-[6rem] right-8 mt-12 text-white border bg-gray-100 border-gray-200 rounded-lg shadow-lg'>
+                            {lang === 'en' ? (
+                                <button
+                                    onClick={() => {
+                                        changeLang('hn');
+                                        handleExpand();
+                                    }}
+                                    className='text-black text-center w-full'>
+                                    हिंदी
+                                </button>
+                            ) : (
+                                <button
+                                    onClick={() => {
+                                        changeLang('en');
+                                        handleExpand();
+                                    }}
+                                    className='text-black mx-auto flex justify-center'>
+                                    English
+                                </button>
+                            )
+
+                            }
+
+                        </div>
+                    )}
+                </div>
             </nav>
 
             {mobilemenu && (

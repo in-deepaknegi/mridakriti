@@ -1,8 +1,13 @@
+"use client"
 import React from 'react';
 import Image from 'next/image';
 import Hero1 from '@/public/mridakriti.jpg';
+import { useLanguage } from '@/library/LangChange';
 
 const Hero = () => {
+
+    const { lang } = useLanguage();
+
     return (
         <section className='relative isolate overflow-hidden'>
             <Image
@@ -17,10 +22,16 @@ const Hero = () => {
                         Announcing our next round of funding... <a href="#" className="font-semibold text-orange-500"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
                     </div>
                 </div>
-                <h1 className='max-w-4xl text-left text-5xl font-semibold text-white md:text-7xl'>
-                    Experience the beauty of soil painting with us
-                </h1>
 
+                {lang === 'en' ? (
+                    <h1 className='max-w-4xl text-left text-5xl font-semibold text-white md:text-7xl'>
+                        Experience the beauty of soil painting with us
+                    </h1>
+                ) : (
+                    <h1 className='max-w-4xl text-left text-5xl font-semibold text-white md:text-7xl'>
+                        हमारे साथ मृदा चित्रकला की सुंदरता का अनुभव करें
+                    </h1>
+                )}
 
                 <div className='ml-auto max-w-xl mt-12'>
                     <p className='text-left text-lg text-white font-light md:text-xl'>
