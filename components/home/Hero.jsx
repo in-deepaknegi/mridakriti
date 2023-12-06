@@ -34,9 +34,18 @@ const Hero = () => {
                 )}
 
                 <div className='ml-auto max-w-xl mt-12'>
-                    <p className='text-left text-lg text-white font-light md:text-xl'>
-                        On an endless journey to create experiences that inspire others. Always motived by design that&apos;s honest, aesthetic and natural. Probably the only designer you&apos;ll ever need.
-                    </p>
+
+                    {lang === 'en' ? (
+                        <p className='text-left text-lg text-white font-light md:text-xl'>
+                            On an endless journey to create experiences that inspire others. Always motived by design that&apos;s honest, aesthetic and natural. Probably the only designer you&apos;ll ever need.
+                        </p>
+                    ) : (
+                        <p className='text-left tracking-widest text-lg text-white font-light md:text-xl'>
+                            दूसरों को प्रेरित करने वाले अनुभव बनाने की अंतहीन यात्रा पर। हमेशा ऐसे डिज़ाइन से प्रेरित होता है जो ईमानदार, सौंदर्यपूर्ण और प्राकृतिक हो। संभवतः एकमात्र डिज़ाइनर जिसकी आपको कभी आवश्यकता होगी। दूसरों को प्रेरित करने वाले अनुभव बनाने की एक अंतहीन यात्रा पर। हमेशा ऐसे डिज़ाइन से प्रेरित होता है जो ईमानदार, सौंदर्यपूर्ण और प्राकृतिक हो। संभवतः एकमात्र डिज़ाइनर जिसकी आपको कभी आवश्यकता होगी।
+                        </p>
+
+                    )}
+
 
                     <div className="mt-10 flex gap-x-6">
                         <a href="#" className="rounded-2xl bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
