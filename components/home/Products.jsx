@@ -2,29 +2,31 @@ import React from 'react';
 import Image from 'next/image';
 import P2102 from '@/public/P2102.jpg';
 import S2103 from '@/public/S2203.jpg';
+import data from '@/utils/data';
+import ProductList from '@/components/home/ProductList';
 
-const product = [
-    {
-        id: 1,
-        name: 'Shri Badrinath Ji',
-        desc: 'Idol made from holy soil of Baikund Dham Shri Badrinath and divine water of Satopanth.',
-        href: '#',
-        imageSrc: P2102,
-        imageAlt: "Front of men's Basic Tee in black.",
-        price: '$35',
-        color: 'Black',
-    },
-    {
-        id: 2,
-        name: 'Shri Kedarnath Ji',
-        desc: 'Idol made of holy soil of Baba Shri Kedarnath ji and divine water of Ganga Maiya.',
-        href: '#',
-        imageSrc: S2103,
-        imageAlt: "Front of men's Basic Tee in black.",
-        price: '$35',
-        color: 'Black',
-    },
-]
+// const product = [
+//     {
+//         id: 1,
+//         name: 'Shri Badrinath Ji',
+//         desc: 'Idol made from holy soil of Baikund Dham Shri Badrinath and divine water of Satopanth.',
+//         href: '#',
+//         imageSrc: P2102,
+//         imageAlt: "Front of men's Basic Tee in black.",
+//         price: '$35',
+//         color: 'Black',
+//     },
+//     {
+//         id: 2,
+//         name: 'Shri Kedarnath Ji',
+//         desc: 'Idol made of holy soil of Baba Shri Kedarnath ji and divine water of Ganga Maiya.',
+//         href: '#',
+//         imageSrc: S2103,
+//         imageAlt: "Front of men's Basic Tee in black.",
+//         price: '$35',
+//         color: 'Black',
+//     },
+// ]
 
 const Products = () => {
     return (
@@ -37,7 +39,9 @@ const Products = () => {
                 </p>
 
                 <div className="mt-12 max-w-6xl grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                    {product.map((product) => (
+                    {data.products.map((product) => (
+                        // <ProductList key={product.id} product={product} >
+                        // </ProductList>
                         <div key={product.id} className="relative">
                             <div className="aspect-[3/2] w-full overflow-hidden rounded-md bg-gray-200 lg:aspect-none hover:opacity-75 lg:h-96">
                                 <Image
@@ -49,7 +53,7 @@ const Products = () => {
                             <div className="mt-4 flex justify-between">
                                 <div>
                                     <h3 className="text-xl text-gray-100">
-                                        <a href={product.href}>
+                                        <a href={`/product?id=${product.id}`}>
                                             <span aria-hidden="true" className="absolute inset-0" />
                                             {product.name}
                                         </a>
