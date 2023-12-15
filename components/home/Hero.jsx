@@ -16,7 +16,7 @@ const Hero = () => {
                 className='fixed inset-0 z-[-10] h-full w-full object-cover brightness-110'
             />
             <div className='absolute w-full h-full z-[-9] bg-gradient-to-b from-black/10 via-black/60 to-black'></div>
-            <div className='mx-auto max-w-7xl px-6 lg:px-8 py-40 lg:py-56'>
+            <div className='mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-28'>
                 <div className="hidden max-w-4xl sm:mb-8 sm:flex">
                     <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-200 ring-1 ring-gray-100 hover:ring-gray-100">
                         Announcing our next round of funding... <a href="#" className="font-semibold text-orange-500"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
