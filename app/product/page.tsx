@@ -15,6 +15,7 @@ const Product = ({ searchParams }: Props) => {
 
     const router = useRouter();
 
+    console.log(searchParams)
     const idString = searchParams?.id;
     const _id = Number(idString);
     const product = data.products.find((product) => product.id === _id)
