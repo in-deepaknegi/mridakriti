@@ -63,7 +63,7 @@ const Products = () => {
                                 <p className="text-sm font-medium text-gray-100">{product.price}</p>
                             </div>
                             <div className=''>
-                                <button className='mt-4 px-8 py-1.5 text-white rounded-xl bg-orange-500 hover:bg-orange-600'>
+                                <button className='mt-4 px-8 py-1.5 text-white rounded-xl bg-primary'>
                                     Add to cart
                                 </button>
                             </div>

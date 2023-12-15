@@ -17,7 +17,7 @@ const Hiw = () => {
                     <div className='mt-16  text-white max-w-xl lg:px-8 lg:mt-0'>
                         <div className='mx-auto flex flex-col gap-y-10'>
                             <div className='flex gap-2 md:gap-6'>
-                                <div className='items-center text-orange-500'>
+                                <div className='items-center text-primary'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                                         className='mx-auto' ><path d="M5.5 8.5 9 12l-3.5 3.5L2 12l3.5-3.5Z" /><path d="m12 2 3.5 3.5L12 9 8.5 5.5 12 2Z" /><path d="M18.5 8.5 22 12l-3.5 3.5L15 12l3.5-3.5Z" /><path d="m12 15 3.5 3.5L12 22l-3.5-3.5L12 15Z" /></svg>
                                     <div className='mt-2 h-full w-[1px] bg-gray-300 lg:static mx-auto'></div>
@@ -33,7 +33,7 @@ const Hiw = () => {
                             </div>
 
                             <div className='flex gap-2 md:gap-6'>
-                                <div className='items-center text-orange-500'>
+                                <div className='items-center text-primary'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                                         className='mx-auto' ><path d="M5.5 8.5 9 12l-3.5 3.5L2 12l3.5-3.5Z" /><path d="m12 2 3.5 3.5L12 9 8.5 5.5 12 2Z" /><path d="M18.5 8.5 22 12l-3.5 3.5L15 12l3.5-3.5Z" /><path d="m12 15 3.5 3.5L12 22l-3.5-3.5L12 15Z" /></svg>
                                     <div className='mt-2 h-full w-[1px] bg-gray-300 lg:static mx-auto'></div>
@@ -49,7 +49,7 @@ const Hiw = () => {
                             </div>
 
                             <div className='flex gap-2 md:gap-6'>
-                                <div className='items-center text-orange-500'>
+                                <div className='items-center text-primary'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                                         className='mx-auto' ><path d="M5.5 8.5 9 12l-3.5 3.5L2 12l3.5-3.5Z" /><path d="m12 2 3.5 3.5L12 9 8.5 5.5 12 2Z" /><path d="M18.5 8.5 22 12l-3.5 3.5L15 12l3.5-3.5Z" /><path d="m12 15 3.5 3.5L12 22l-3.5-3.5L12 15Z" /></svg>
                                     <div className='mt-2 h-full w-[1px] bg-gray-300 lg:static mx-auto'></div>
@@ -65,7 +65,7 @@ const Hiw = () => {
                             </div>
 
                             <div className='flex gap-2 md:gap-6'>
-                                <div className='items-center text-orange-500'>
+                                <div className='items-center text-primary'>
                                     <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"
                                         className='mx-auto' ><path d="M5.5 8.5 9 12l-3.5 3.5L2 12l3.5-3.5Z" /><path d="m12 2 3.5 3.5L12 9 8.5 5.5 12 2Z" /><path d="M18.5 8.5 22 12l-3.5 3.5L15 12l3.5-3.5Z" /><path d="m12 15 3.5 3.5L12 22l-3.5-3.5L12 15Z" /></svg>
                                     {/* <div className='h-full w-[1px] bg-gray-300 lg:static mx-auto'></div> */}

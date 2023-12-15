@@ -24,4 +24,14 @@
   ::-webkit-scrollbar-corner {
     background: #f1f1f1; /* color of the scrollbar corner */
   }
+
+  .bg-primary {
+    background-color: #ae8949;
+  }
+  .bg-primary:hover {
+    background-color: #937038;
+  }
+  .text-primary {
+    color: #c9a569;
+  }
 }

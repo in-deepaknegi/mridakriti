@@ -19,7 +19,7 @@ const Hero = () => {
             <div className='mx-auto max-w-7xl px-6 lg:px-8 py-24 lg:py-28'>
                 <div className="hidden max-w-4xl sm:mb-8 sm:flex">
                     <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-200 ring-1 ring-gray-100 hover:ring-gray-100">
-                        Announcing our next round of funding... <a href="#" className="font-semibold text-orange-500"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
+                        Announcing our next round of funding... <a href="#" className="font-semibold text-primary"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>
                     </div>
                 </div>
 
@@ -48,7 +48,7 @@ const Hero = () => {
 
 
                     <div className="mt-10 flex gap-x-6">
-                        <a href="#" className="rounded-2xl bg-orange-500 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-orange-700 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        <a href="#" className="rounded-2xl bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
                             See our work
                         </a>
                         <a href="#" className="text-sm font-semibold leading-6 text-gray-200 my-auto">
