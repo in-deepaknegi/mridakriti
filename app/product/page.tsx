@@ -1,6 +1,6 @@
 "use client"
 import React, { useContext } from 'react'
-import data from '@/utils/data';
+import products from '@/utils/data';
 import Navbar from '@/components/Navbar';
 import { useCart } from '@/library/CartContext';
 import { useRouter } from 'next/navigation';
@@ -18,7 +18,7 @@ const Product = ({ searchParams }: Props) => {
     console.log(searchParams)
     const idString = searchParams?.id;
     const _id = Number(idString);
-    const product = data.products.find((product) => product.id === _id)
+    const product = products.find((product) => product.id === _id)
 
     const { addToCart } = useCart();
 

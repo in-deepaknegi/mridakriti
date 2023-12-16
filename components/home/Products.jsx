@@ -2,7 +2,7 @@ import React from 'react';
 import Image from 'next/image';
 import P2102 from '@/public/P2102.jpg';
 import S2103 from '@/public/S2203.jpg';
-import data from '@/utils/data';
+import products from '@/utils/data';
 import ProductList from '@/components/home/ProductList';
 
 // const product = [
@@ -39,7 +39,7 @@ const Products = () => {
                 </p>
 
                 <div className="mt-12 max-w-6xl grid grid-cols-1 gap-x-6 gap-y-10 sm:grid-cols-2 lg:grid-cols-3 xl:gap-x-8">
-                    {data.products.map((product) => (
+                    {products.map((product) => (
                         // <ProductList key={product.id} product={product} >
                         // </ProductList>
                         <div key={product.id} className="relative">
