@@ -60,9 +60,9 @@ const Navbar = () => {
                                 </a>
                             </div>
                             <div className='hidden lg:flex lg:flex-1 lg:gap-2 lg:items-center lg:justify-end'>
-                                <a href="/" className='text-gray-100 text-sm'>Sign In</a>
+                                <a href="/login" className='text-gray-100 text-sm'>Log In</a>
                                 <span className='h-4 w-[1px] bg-gray-200 mx-2'></span>
-                                <a href="/" className='text-gray-100 text-sm'>Create an account</a>
+                                <a href="/signup" className='text-gray-100 text-sm'>Create an account</a>
                             </div>
                         </div>
                     </div>

@@ -1,31 +1,18 @@
-"use client"
-import React, { useContext } from 'react'
+import React from 'react'
 import products from '@/utils/data';
 import Navbar from '@/components/Navbar';
-import { useCart } from '@/library/CartContext';
-import { useRouter } from 'next/navigation';
-
+import Hero from '@/components/product/Hero';
 
 type Props = {
     searchParams: { [key: string]: string | string[] | undefined }
 }
 
-
-const Product = ({ searchParams }: Props) => { 
-
-    const router = useRouter();
+const Product = ({ searchParams }: Props) => {
 
     console.log(searchParams)
     const idString = searchParams?.id;
     const _id = Number(idString);
     const product = products.find((product) => product.id === _id)
-
-    const { addToCart } = useCart();
-
-    const handleAddToCart = () => {
-        addToCart(product);
-        router.push('/cart');
-    }
 
     if (!product) {
         return <div>Product Not Found</div>
@@ -34,15 +21,9 @@ const Product = ({ searchParams }: Props) => {
     return (
         <>
             <Navbar />
-            <div className='py-40'>
-                <h1>
-                    {product.id}
-                    <button
-                    onClick={handleAddToCart}
-                        className='border text-xl'
-                    >Add</button>
-                </h1>
-            </div>
+            <main>
+                <Hero product={product} />
+            </main>
         </>
     )
 }

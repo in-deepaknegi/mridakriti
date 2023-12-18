@@ -1,32 +1,8 @@
 import React from 'react';
 import Image from 'next/image';
-import P2102 from '@/public/P2102.jpg';
-import S2103 from '@/public/S2203.jpg';
 import products from '@/utils/data';
 import ProductList from '@/components/home/ProductList';
 
-// const product = [
-//     {
-//         id: 1,
-//         name: 'Shri Badrinath Ji',
-//         desc: 'Idol made from holy soil of Baikund Dham Shri Badrinath and divine water of Satopanth.',
-//         href: '#',
-//         imageSrc: P2102,
-//         imageAlt: "Front of men's Basic Tee in black.",
-//         price: '$35',
-//         color: 'Black',
-//     },
-//     {
-//         id: 2,
-//         name: 'Shri Kedarnath Ji',
-//         desc: 'Idol made of holy soil of Baba Shri Kedarnath ji and divine water of Ganga Maiya.',
-//         href: '#',
-//         imageSrc: S2103,
-//         imageAlt: "Front of men's Basic Tee in black.",
-//         price: '$35',
-//         color: 'Black',
-//     },
-// ]
 
 const Products = () => {
     return (
@@ -47,6 +23,8 @@ const Products = () => {
                                 <Image
                                     src={product.imageSrc}
                                     alt={product.imageAlt}
+                                    loading='eager'
+                                    quality={100}
                                     className="h-full w-full object-cover object-bottom lg:h-full lg:w-full"
                                 />
                             </div>
