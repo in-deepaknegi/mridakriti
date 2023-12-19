@@ -9,7 +9,7 @@ const Newsletter = () => {
                         Want product news and updated?
                     </h2>
                     <h2 className='mx-auto mt-2 max-w-2xl text-center text-2xl font-bold tracking-wide text-gray-100 sm:text-4xl'>
-                        Sing up for out newsletter
+                        Sign up for our newsletter
                     </h2>
                     {/* <p className='mt-4 mx-auto max-w-xl text-center text-3xl text-gray-200 sm:text-base'>
                         Reprehenderit ad esse et non officia in nulla. Id proident tempor incididunt nostrud nulla et culpa.
