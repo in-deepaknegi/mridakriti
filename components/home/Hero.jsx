@@ -47,7 +47,7 @@ const Hero = () => {
                     )}
 
                     <div className="mt-10 flex gap-x-6">
-                        <a href="#" className="rounded-2xl bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600">
+                        <a href="#" className="rounded-2xl bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
                             See our work
                         </a>
                         <a href="#" className="text-sm font-semibold leading-6 text-gray-200 my-auto">
