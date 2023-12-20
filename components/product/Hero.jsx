@@ -25,6 +25,7 @@ const Hero = ({ product }) => {
                                                 alt='hero2'
                                                 loading='eager'
                                                 quality={100}
+                                                priority={true}
                                                 className='h-full w-full object-cover object-bottom'
                                             />
                                         </span>
@@ -39,6 +40,7 @@ const Hero = ({ product }) => {
                                     alt='hero1'
                                     loading='eager'
                                     quality={100}
+                                    priority={true}
                                     className='w-full h-full object-contain object-center overflow-clip rounded-lg'
                                 />
                             </div>

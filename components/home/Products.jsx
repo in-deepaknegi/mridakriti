@@ -25,6 +25,7 @@ const Products = () => {
                                     alt={product.imageAlt}
                                     loading='eager'
                                     quality={100}
+                                    priority={true}
                                     className="h-full w-full object-contain object-center lg:h-full lg:w-full"
                                 />
                             </div>

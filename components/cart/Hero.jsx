@@ -28,7 +28,8 @@ const Hero = () => {
         <section className='relative isolate bg-black -mt-20 overflow-hidden'>
             {loading ? (
                 <div className="flex justify-center items-center py-56">
-                    <p className='text-white text-2xl'>Loading...</p>
+                    {/* <p className='text-white text-2xl'>Loading...</p> */}
+                    <div className="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
                 </div>
             ) : (
                 <div className='mx-auto px-4 pb-24 pt-36 sm:pt-20 sm:px-6 lg:max-w-7xl lg:px-8'>
@@ -45,6 +46,8 @@ const Hero = () => {
                                                     <Image
                                                         src={item.imageSrc}
                                                         alt={item.imageAlt}
+                                                        loading='eager'
+                                                        priority={true}
                                                         className='h-24 w-36 rounded-md object-cover object-center sm:h-48 sm:w-48'
                                                     />
                                                 </div>
