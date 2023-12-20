@@ -2,6 +2,8 @@ import React from 'react'
 import products from '@/utils/data';
 import Navbar from '@/components/Navbar';
 import Hero from '@/components/product/Hero';
+import Faq from '@/components/Faq';
+import Footer from '@/components/Footer';
 
 type Props = {
     searchParams: { [key: string]: string | string[] | undefined }
@@ -23,7 +25,9 @@ const Product = ({ searchParams }: Props) => {
             <Navbar />
             <main>
                 <Hero product={product} />
+                <Faq />
             </main>
+            <Footer />
         </>
     )
 }
