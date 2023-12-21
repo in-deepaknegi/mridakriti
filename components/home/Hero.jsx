@@ -15,6 +15,7 @@ const Hero = () => {
                 alt='hero image 3'
                 loading='eager'
                 quality={100}
+                priority={true}
                 className='fixed inset-0 z-[-10] h-full w-full object-cover brightness-110'
             />
             <div className='absolute w-full h-full z-[-9] bg-gradient-to-b from-black/10 via-black/60 to-black'></div>

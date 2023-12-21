@@ -3,7 +3,7 @@ import P2102 from '@/public/P2102.jpg';
 import S2102 from '@/public/S2202.jpg';
 import S2103 from '@/public/S2203.jpg';
 import Gangotri from '@/public/gangotri.webp';
-
+import Yamnotri from '@/public/yamnotri.webp'
 
 const products = [
     {
@@ -29,7 +29,6 @@ const products = [
             },
         ],
         price: 1200,
-        color: 'Black',
         countInStock: 10,
     },
     {
@@ -55,7 +54,6 @@ const products = [
             },
         ],
         price: 1200,
-        color: 'Black',
         countInStock: 10,
     },
     {
@@ -81,7 +79,31 @@ const products = [
             },
         ],
         price: 1200,
-        color: 'Black',
+        countInStock: 10,
+    },
+    {
+        id: 4,
+        slug: 'shri-kedarnath',
+        name: 'Yamnotri Dham',
+        desc: "The form of Yamunotri Dham, meticulously shaped from the consecrated soil of its own revered grounds and infused with the divine waters of Mother Ganga, embodies a profound spiritual significance. It encapsulates not just a physical representation of the sacred pilgrimage site but also the essence of devotion, sanctity, and the interconnectedness of revered natural elements.",
+        href: '#',
+        imageSrc: Yamnotri,
+        imageAlt: "Front of men's Basic Tee in black.",
+        gallery: [
+            {
+                src: Yamnotri,
+                alt: 'product-1',
+            },
+            {
+                src: Yamnotri,
+                alt: 'product-1',
+            },
+            {
+                src: Yamnotri,
+                alt: 'product-1',
+            },
+        ],
+        price: 1200,
         countInStock: 10,
     },
 ]
