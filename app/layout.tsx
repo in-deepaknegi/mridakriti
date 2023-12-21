@@ -19,10 +19,9 @@ export default function RootLayout({
 }) {
 
   const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "name": "Mridakrit",
-    "url": "https://www.mridakriti.com"
+    '@context': 'https://schema.org',
+    '@type': 'Painting',
+    name: 'Mridakriti'
   };
 
   return (

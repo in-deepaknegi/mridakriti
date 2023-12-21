@@ -2,6 +2,7 @@ import P2101 from '@/public/P2101.jpg';
 import P2102 from '@/public/P2102.jpg';
 import S2102 from '@/public/S2202.jpg';
 import S2103 from '@/public/S2203.jpg';
+import Gangotri from '@/public/gangotri.webp';
 
 
 const products = [
@@ -56,7 +57,33 @@ const products = [
         price: 1200,
         color: 'Black',
         countInStock: 10,
-    }
+    },
+    {
+        id: 3,
+        slug: 'shri-kedarnath',
+        name: 'Gangotri Dham',
+        desc: "The shape of Gangotri Dham, crafted from the sacred soil of its very land and infused with the divine waters of Mother Ganga, holds a profound significance. This symbol not only embodies the physical representation of the revered pilgrimage site but encapsulates the spiritual essence of devotion and sanctity.",
+        href: '#',
+        imageSrc: Gangotri,
+        imageAlt: "Front of men's Basic Tee in black.",
+        gallery: [
+            {
+                src: Gangotri,
+                alt: 'product-1',
+            },
+            {
+                src: Gangotri,
+                alt: 'product-1',
+            },
+            {
+                src: Gangotri,
+                alt: 'product-1',
+            },
+        ],
+        price: 1200,
+        color: 'Black',
+        countInStock: 10,
+    },
 ]
 
 
