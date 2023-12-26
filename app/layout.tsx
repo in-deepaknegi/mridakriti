@@ -1,7 +1,8 @@
 import type { Metadata } from 'next'
+import Head from 'next/head';
+import Script from 'next/script';
 import { Inter } from 'next/font/google'
 import './globals.css'
-import Script from 'next/script';
 import { LanguageProvider } from '@/library/LangChange';
 import { CartProvider } from '@/library/CartContext';
 
@@ -20,16 +21,15 @@ export default function RootLayout({
 
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'Painting',
+    '@type': 'Organization',
     name: 'Mridakriti'
   };
 
   return (
     <html lang="en">
-      <Script id="my-script"
-        type="application/ld+json"
+      <Script id='json-ld' type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-      />
+        key='json-ld' />
       < CartProvider >
         <LanguageProvider>
           <body className={inter.className}>
