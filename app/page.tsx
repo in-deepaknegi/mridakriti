@@ -5,14 +5,19 @@ import Products from '@/components/home/Products';
 import Hiw from '@/components/home/Hiw';
 import Testimonial from '@/components/Testimonial';
 import Newsletter from '@/components/Newsletter';
-import Head from 'next/head';
+import StructuredData from '@/components/StructuredData';
 
 export default function Home() {
+
+  const structuredData = {
+    '@context': 'https://schema.org',
+    '@type': 'BlogPosting',
+    'name': 'Mridakriti'
+  };
+
   return (
     <>
-    <Head>
-      <title>SDJfksdfkdfj</title>
-    </Head>
+      <StructuredData data={structuredData} />
       <Navbar />
       <main>
         <Hero />
