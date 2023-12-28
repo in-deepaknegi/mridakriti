@@ -5,19 +5,23 @@ import Products from '@/components/home/Products';
 import Hiw from '@/components/home/Hiw';
 import Testimonial from '@/components/Testimonial';
 import Newsletter from '@/components/Newsletter';
-import StructuredData from '@/components/StructuredData';
+
+import Script from 'next/script';
 
 export default function Home() {
-
   const structuredData = {
     '@context': 'https://schema.org',
-    '@type': 'BlogPosting',
-    'name': 'Mridakriti'
+    '@type': 'Organization',
+    name: 'Mridakriti'
   };
 
   return (
     <>
-      <StructuredData data={structuredData} />
+      <Script
+        id='json-ld'
+        type='application/ld+json'
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+      />
       <Navbar />
       <main>
         <Hero />
