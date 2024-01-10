@@ -9,8 +9,14 @@ const inter = Inter({ subsets: ['latin'] })
 export const metadata: Metadata = {
   title: 'Mridakriti',
   description: "On an endless journey to create experiences that inspire others. Always motived by design that's honest, aesthetic and natural. Probably the only designer you'll ever need.",
+  openGraph: {
+    type: "website",
+    url: "https://www.mridakriti.com/",
+    title: "Mridakriti",
+    description: "On an endless journey to create experiences that inspire others. Always motived by design that's honest, aesthetic and natural. Probably the only designer you'll ever need.",
+    siteName: "Mridakriti",
+  }
 }
-
 
 export default function RootLayout({
   children,
