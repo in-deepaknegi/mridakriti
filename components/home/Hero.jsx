@@ -9,17 +9,24 @@ const Hero = () => {
     const { lang } = useLanguage();
 
     return (
-        <section className='relative isolate overflow-hidden'>
-            <Image
+        <section className='bg relative isolate overflow-hidden' style={{
+            backgroundImage: "url('/mridakriti.jpg')",
+            backgroundPosition: 'center',
+            backgroundSize: 'cover',
+            backgroundAttachment: 'fixed',
+            filter: 'brightness(1.2)',
+            marginTop:'-5rem',
+        }}>
+            {/* <Image
                 src={Hero1}
                 alt='hero image 3'
                 loading='eager'
                 quality={100}
                 priority={true}
                 className='fixed inset-0 z-[-10] h-full w-full object-cover brightness-110'
-            />
+            /> */}
             <div className='absolute w-full h-full z-[-9] bg-gradient-to-b from-black/10 via-black/60 to-black'></div>
-            <div className='mx-auto max-w-7xl px-6 lg:px-8 py-32 lg:py-28'>
+            <div className='mx-auto max-w-7xl px-6 lg:px-8 py-60 lg:py-48'>
                 <div className="hidden max-w-4xl sm:mb-8 sm:flex">
                     <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-200 ring-1 ring-gray-100 hover:ring-gray-100">
                         Announcing our next round of funding... <a href="#" className="font-semibold text-primary"><span className="absolute inset-0" aria-hidden="true"></span>Read more <span aria-hidden="true">&rarr;</span></a>

@@ -3,12 +3,14 @@ import { Inter } from 'next/font/google'
 import './globals.css'
 import { LanguageProvider } from '@/library/LangChange';
 import { CartProvider } from '@/library/CartContext';
+import { url } from 'inspector';
 
 const inter = Inter({ subsets: ['latin'] })
 
 export const metadata: Metadata = {
   title: 'Mridakriti',
   description: "On an endless journey to create experiences that inspire others. Always motived by design that's honest, aesthetic and natural. Probably the only designer you'll ever need.",
+  metadataBase: new URL('https://www.mridakriti.com/'),
   openGraph: {
     type: "website",
     url: "https://www.mridakriti.com/",

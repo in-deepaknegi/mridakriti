@@ -5,7 +5,7 @@ import Products from '@/components/home/Products';
 import Hiw from '@/components/home/Hiw';
 import Testimonial from '@/components/Testimonial';
 import Newsletter from '@/components/Newsletter';
-
+import Upcoming from '@/components/home/Upcoming'
 
 export default function Home() {
 
@@ -14,6 +14,7 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
+        <Upcoming />
         <Products />
         <Hiw />
         <Testimonial />
