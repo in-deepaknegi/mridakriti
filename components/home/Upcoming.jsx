@@ -46,7 +46,7 @@ const Upcoming = () => {
                                 ))}
                             </div>
                             <div className="mt-10 flex gap-x-6">
-                                <a href="/booking" className="rounded-md px-3.5 py-2.5 text-sm font-semibold text-orange-600 shadow-sm ring-1 ring-orange-500 hover:text-white hover:bg-orange-500">
+                                <a href="/booking/ram-mandir" className="rounded-md px-3.5 py-2.5 text-sm font-semibold bg-primary">
                                     Book now
                                 </a>
                                 <a href="/upcoming/product?id=220124" className="text-sm font-semibold leading-6 text-gray-200 my-auto">

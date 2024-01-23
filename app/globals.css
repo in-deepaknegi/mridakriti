@@ -35,6 +35,14 @@
     color: #c9a569;
   }
 
+  .form label {
+    @apply block mb-2 text-sm font-medium text-gray-100;
+  }
+  .form input,
+  textarea {
+    @apply shadow-sm bg-slate-100 border border-gray-300 text-gray-800 text-sm rounded-lg block w-full p-2.5;
+  }
+
 
   .lds-ellipsis {
     display: inline-block;

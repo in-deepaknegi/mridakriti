@@ -66,7 +66,7 @@ const Navbar = () => {
                             </div>
                         </div>
                     </div>
-                    <div className=' bg-black/40 flex items-center justify-between px-6 py-3 lg:px-8'>
+                    <div className=' bg-black/40 flex items-center justify-between border-b border-gray-600 px-6 py-3 lg:px-8'>
                         <div className=''>
                             <a href="/" className="-m-1.5 p-1.5 flex gap-2 text-2xl font-mediumn text-white">
                                 <Image
