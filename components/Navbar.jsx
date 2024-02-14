@@ -3,24 +3,13 @@
 import Image from 'next/image';
 import React, { useState } from 'react'
 import Logo from '@/public/logo.png'
-import { useLanguage } from '@/library/LangChange';
-import { useCart } from '@/library/CartContext';
 
 const Navbar = () => {
-
-    const { lang, changeLang } = useLanguage();
-
     const [mobilemenu, setMobileMenu] = useState(false);
-    const [isExpanded, setIsExpanded] = useState(false);
 
     const toggleMobileMenu = () => {
         setMobileMenu(!mobilemenu);
     }
-    const handleExpand = () => {
-        setIsExpanded(!isExpanded);
-    }
-
-    const { cart } = useCart();
 
     return (
         <>
@@ -28,32 +17,6 @@ const Navbar = () => {
                 <nav>
                     <div className='bg-black hidden lg:block'>
                         <div className='mx-auto flex h-10 max-w-7xl items-center justify-between px-4 sm:px-6 lg:px-0'>
-                            <button
-                                onClick={handleExpand}
-                                className='hidden text-white text-sm text-left lg:flex lg:flex-1'>
-                                {lang === 'en' ? <>English</> : <>हिंदी</>}
-                                <svg className={`ml-1 my-auto 
-                            ${isExpanded ? 'transform rotate-180' : ''}`}
-                                    xmlns="http://www.w3.org/2000/svg" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                                    <path d="m6 9 6 6 6-6" />
-                                </svg>
-                            </button>
-                            {isExpanded && (
-                                <div className='absolute w-[4.5rem] left-8 mt-16 text-white text-sm bg-black border border-gray-600 rounded-lg'>
-                                    <button
-                                        onClick={() => {
-                                            changeLang('en');
-                                            handleExpand();
-                                        }}
-                                        className='px-2 mt-[0.15rem]'>English</button>
-                                    <button
-                                        onClick={() => {
-                                            changeLang('hn');
-                                            handleExpand();
-                                        }}
-                                        className='px-2 mt-[0.15rem]'>हिंदी</button>
-                                </div>
-                            )}
                             <div className='flex-1 items-center lg:flex-none'>
                                 <a href="/" className='text-gray-200 text-sm'>
                                     Get 20% off on your first order
@@ -83,11 +46,6 @@ const Navbar = () => {
                         <div className='flex lg:hidden'>
                             <a href="/cart" className='flex mr-5 gap-1'>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" className='w-6 h-6 text-gray-100'><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"></path></svg>
-                                {cart.length > 0 && (
-                                    <span className='my-auto text-sm font-semibold text-primary'>
-                                        {cart.length}
-                                    </span>
-                                )}
                             </a>
 
                             <button
@@ -117,11 +75,7 @@ const Navbar = () => {
                             <span className='h-5 w-[1px] bg-gray-100'></span>
                             <a href="/cart" className='flex gap-1'>
                                 <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth="1.5" stroke="currentColor" aria-hidden="true" className='w-6 h-6 text-gray-100'><path strokeLinecap="round" strokeLinejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"></path></svg>
-                                {cart.length > 0 && (
-                                    <span className='my-auto text-sm font-semibold text-primary'>
-                                        {cart.length}
-                                    </span>
-                                )}
+                                
                             </a>
                         </div>
                     </div>
