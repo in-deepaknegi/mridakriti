@@ -13,6 +13,9 @@ const page = () => {
         <>
             <Navbar/>
             <Footer/>
+            <div>
+                changes in main
+            </div>
         </>
     )
 }
