@@ -53,13 +53,13 @@ const Navbar = () => {
                         </div>
                     </div>
                 </div> */}
-                <div className="bg-olive-200  border-b border-olive-300/50 flex items-center justify-between px-6 py-4 lg:px-8">
+                <div className="bg-olive-200/60 border-b border-olive-300/50 flex items-center justify-between px-6 py-3 md:py-4 lg:px-8">
                     <div className="flex lg:flex-none">
                         <a
                             href="/"
                             className="-m-1.5 p-1.5 flex gap-2 text-2xl font-mediumn text-olive-900"
                         >
-                            <Image src={Logo} alt="site-logo" className="w-12 h-12" />
+                            <Image src={Logo} alt="site-logo" className="w-10 h-10 md:w-12 md:h-12" />
                             <span className="hidden my-auto md:block">Mridakriti</span>
                         </a>
                     </div>

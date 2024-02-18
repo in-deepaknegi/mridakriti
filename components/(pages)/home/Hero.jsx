@@ -27,7 +27,7 @@ const images = [
 
 const Hero = () => {
     return (
-        <section className="relative isolate bg-olive-200 z-[-10] overflow-hidden">
+        <section className="relative isolate bg-olive-200/60 z-[-10] overflow-hidden">
             <div className="my-10 max-w-7xl px-6 lg:px-8 mx-auto ">
                 <div className="relative w-full h-full isolate">
                     <Swiper
@@ -56,7 +56,7 @@ const Hero = () => {
 
                                 <div className="absolute w-full h-full z-[-9] bg-gradient-to-b from-white/10 via-black/40 to-black rounded-2xl overflow-hidden"></div>
 
-                                <div className="mx-auto px-8 pb-16 pt-40 lg:pt-48">
+                                <div className="mx-auto px-8 pb-16 pt-[18.5rem] md:pt-48">
                                     <div className="hidden sm:mb-8 sm:flex">
                                         <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-200 ring-1 ring-gray-100/10 hover:ring-gray-100">
                                             Announcing our next round of funding.{" "}
