@@ -54,7 +54,7 @@ const features = [
 
 const Feature = () => {
     return (
-        <section className="relative isolate bg-olive-200 py-16 z-[-10] sm:py-20">
+        <section className="relative bg-olive-200 py-16 sm:py-20">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto flex flex-col lg:gap-y-0 gap-x-0 gap-y-10 lg:gap-x-8 lg:flex-row h-full">
                     <div className="w-full lg:order-first order-last">
@@ -81,15 +81,15 @@ const Feature = () => {
                         <div className="mt-6 flex gap-x-6">
                             <a
                                 href="#"
-                                className="rounded-md px-3.5 py-2.5 text-sm font-semibold text-orange-600 shadow-sm ring-1 ring-orange-500 hover:text-white hover:bg-primary"
+                                className="rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm text-white bg-soil-100 hover:bg-soil-200"
                             >
-                                Book now
+                                Explore paintings
                             </a>
                             <a
                                 href="#"
                                 className="text-sm font-semibold leading-6 text-gray-900 my-auto"
                             >
-                                Explore rafting <span aria-hidden="true">→</span>
+                                Join with us<span aria-hidden="true">→</span>
                             </a>
                         </div>
                     </div>

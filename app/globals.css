@@ -20,14 +20,4 @@
   ::-webkit-scrollbar-corner {
     background: #f1f1f1;
   }
-
-  .bg-primary {
-    background-color: #9b7a42;
-  }
-  .bg-primary:hover {
-    background-color: #6d5329;
-  }
-  .text-primary {
-    color: #c9a569;
-  }
 }

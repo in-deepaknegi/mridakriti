@@ -27,7 +27,7 @@ const images = [
 
 const Hero = () => {
     return (
-        <section className="relative isolate bg-olive-200/60 z-[-10] overflow-hidden">
+        <section className="relative isolate bg-olive-200/60 overflow-hidden">
             <div className="my-10 max-w-7xl px-6 lg:px-8 mx-auto ">
                 <div className="relative w-full h-full isolate">
                     <Swiper

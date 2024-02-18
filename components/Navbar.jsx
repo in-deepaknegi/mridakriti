@@ -34,7 +34,7 @@ const Navbar = () => {
     };
 
     return (
-        <header className="relative isolate">
+        <header className="relative isolate z-10">
             <nav>
                 {/* <div className='bg-white'>
                     <div className='mx-auto flex h-10 items-center justify-between px-4 sm:px-6 lg:px-8'>
@@ -174,7 +174,7 @@ const Navbar = () => {
 
             {mobilemenu && (
                 <div className="" role="dialog" aria-modal="true">
-                    <div className="fixed inset-y-0 top-[5rem] right-0  overflow-y-auto  px-6 py-10 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 h-full w-full bg-olive-100 bg-clip-padding backdrop-filter bg-opacity-70 backdrop-blur-md">
+                    <div className="fixed inset-y-0 top-[5rem] right-0 overflow-y-auto px-6 py-10 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 h-full w-full bg-olive-100 bg-clip-padding backdrop-filter bg-opacity-70 backdrop-blur-md">
                         <div className="flex items-center justify-between">
                             <a href="#" className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>
