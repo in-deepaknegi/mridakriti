@@ -3,7 +3,7 @@ import Footer from '@/components/Footer';
 import Newsletter from '@/components/Newsletter';
 
 import Hero from '@/components/(pages)/home/Hero';
-
+import Feature from '@/components/(pages)/home/Feature'
 export default function Home() {
 
   return (
@@ -11,7 +11,8 @@ export default function Home() {
       <Navbar />
       <main>
         <Hero />
-        <Newsletter />
+        <Feature />
+        {/* <Newsletter /> */}
       </main>
       <Footer />
     </>

@@ -31,7 +31,7 @@ const Footer = () => {
                     </ul>
                 </div>
 
-                <span className='block text-sm text-gray-500 sm:text-right dark:text-gray-400'>© 2023 <a href='/' className='hover:underline'>Mridakriti™</a>. All Rights Reserved.</span>
+                <span className='block text-sm text-gray-500 sm:text-right dark:text-gray-400'>© 2024 <a href='/' className='hover:underline'>Mridakriti™</a>. All Rights Reserved.</span>
 
                 <span className='mt-2 block text-xs text-gray-500 sm:text-right dark:text-gray-400'>Designed by: <a target='_blank' href="https://www.deepaknegi.in/">Deepak Negi</a></span>
             </div>

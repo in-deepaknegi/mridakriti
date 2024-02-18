@@ -1,98 +1,91 @@
-"use client"
-import React from 'react';
+"use client";
+import React from "react";
 
-import { Swiper, SwiperSlide } from 'swiper/react';
-import 'swiper/css';
-import 'swiper/css/effect-coverflow';
-import 'swiper/css/pagination';
-import { EffectCoverflow, Autoplay, Pagination } from 'swiper/modules';
+import Image from "next/image";
+import Hero2 from "@/public/products/p00.jpg";
+import Hero1 from "@/public/products/p02.jpg";
 
-import Image from 'next/image';
-import Hero1 from '@/public/mridakriti.jpg'
-import Hero2 from '@/public/rammandir.jpg'
-import Hero3 from '@/public/P2102.jpg'
+import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
+import "swiper/css/pagination";
+import { EffectFade, Autoplay, Navigation, Pagination } from "swiper/modules";
 
 const images = [
     {
         id: 1,
         src: Hero1,
-        alt: 'mridakriti',
+        alt: "slider 1",
     },
     {
         id: 2,
         src: Hero2,
-        alt: 'ram-mandir',
+        alt: "slider 2",
     },
-    {
-        id: 3,
-        src: Hero3,
-        alt: 'badrinath',
-    },
-]
+];
 
 const Hero = () => {
     return (
-        <section className="overflow-hidden bg-black py-16 sm:py-20">
-            <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto grid grid-cols-12 gap-x-2 gap-y-16 sm:gap-y-10 lg:mx-0 lg:max-w-none">
-                    <div className="col-span-12 lg:col-span-7 lg:pr-10 lg:py-16">
-                        <h2 className="text-4xl font-semibold tracking-tight text-olive-100 sm:text-6xl">
-                        Explore the art of soil painting with us.
-                        </h2>
-                        <p className="mt-6 text-base text-olive-300 md:text-lg">
-                            On an endless journey to create experiences that inspire others. Always motived by design that&apos;s honest, aesthetic and natural. Probably the only designer you&apos;ll ever need.
-                        </p>
+        <section className="relative isolate bg-olive-200 z-[-10] overflow-hidden">
+            <div className="my-10 max-w-7xl px-6 lg:px-8 mx-auto ">
+                <div className="relative w-full h-full isolate">
+                    <Swiper
+                        spaceBetween={30}
+                        effect={"coverflow"}
+                        speed={1500}
+                        autoplay={{
+                            delay: 2000,
+                            disableOnInteraction: false,
+                        }}
+                        loop={true}
+                        modules={[Autoplay, EffectFade, Navigation]}
+                        className="rounded-2xl"
+                    >
+                        {images.map((image) => (
+                            <SwiperSlide key={image.id}>
+                                <Image
+                                    src={image.src}
+                                    alt={image.alt}
+                                    quality={100}
+                                    loading="eager"
+                                    fill={true}
+                                    sizes="100vw"
+                                    className="w-full h-full rounded-2xl object-cover inset-0 z-[-10] brightness-110"
+                                />
 
-                        <div className="mt-10 flex gap-x-6">
-                            <a href="#" className="rounded-2xl bg-primary px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2">
-                                See our work
-                            </a>
-                            <a href="#" className="text-sm font-semibold leading-6 text-olive-400 hover:text-olive-200 my-auto">
-                                Connect with us <span aria-hidden="true">→</span></a>
-                        </div>
-                    </div>
-                    <div className="col-span-12 lg:col-span-5 h-full py-10">
-                        <>
-                            <Swiper
-                                effect={'coverflow'}
-                                grabCursor={true}
-                                centeredSlides={true}
-                                slidesPerView={'auto'}
-                                coverflowEffect={{
-                                    rotate: 100,
-                                    stretch: 0,
-                                    depth: 200,
-                                    modifier: 1,
-                                    slideShadows: true,
-                                }}
-                                speed={1000}
-                                loop={true}
-                                autoplay={{
-                                    delay: 3000,
-                                    disableOnInteraction: false,
-                                }}
-                                pagination={false}
-                                modules={[EffectCoverflow, Autoplay, Pagination]}
-                                className="mySwiper h-full w-full"
-                            >
-                                {images.map((image) => (
-                                    <SwiperSlide key={image.id}>
-                                        <Image
-                                            src={image.src}
-                                            alt={image.alt}
-                                            loading="eager"
-                                            className="h-full rounded-md object-cover object-center"
-                                        />
-                                    </SwiperSlide>
-                                ))}
-                            </Swiper>
-                        </>
+                                <div className="absolute w-full h-full z-[-9] bg-gradient-to-b from-white/10 via-black/40 to-black rounded-2xl overflow-hidden"></div>
 
-                    </div>
+                                <div className="mx-auto px-8 pb-16 pt-40 lg:pt-48">
+                                    <div className="hidden sm:mb-8 sm:flex">
+                                        <div className="relative rounded-full px-3 py-1 text-sm leading-6 text-gray-200 ring-1 ring-gray-100/10 hover:ring-gray-100">
+                                            Announcing our next round of funding.{" "}
+                                            <a href="#" className="font-medium text-gray-100">
+                                                <span
+                                                    className="absolute inset-0"
+                                                    aria-hidden="true"
+                                                ></span>
+                                                Read more <span aria-hidden="true">&rarr;</span>
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <h1 className="text-5xl max-w-3xl font-semibold text-white md:text-6xl md:text-left text-center">
+                                        Experience the beauty of soil painting with us
+                                    </h1>
+                                    <p className="mt-6 text-base text-center md:text-right md:ml-auto max-w-3xl text-gray-200 md:font-light md:text-lg">
+                                        On an endless journey to create experiences that inspire
+                                        others. Always motived by design that&apos;s honest,
+                                        aesthetic and natural. Probably the only designer
+                                        you&apos;ll ever need.
+                                    </p>
+                                </div>
+                            </SwiperSlide>
+                        ))}
+                    </Swiper>
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Hero
+export default Hero;
