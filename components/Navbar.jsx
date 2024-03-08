@@ -7,7 +7,7 @@ const links = [
     {
         id: 1,
         title: "Products",
-        url: "#",
+        url: "/products",
     },
     {
         id: 2,
