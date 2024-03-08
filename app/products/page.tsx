@@ -2,6 +2,10 @@ import { getProducts } from "@/lib/shopify";
 import React from "react";
 import Link from "next/link";
 import Image from "next/image";
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+
+export const runtime = 'edge';
 
 const page = async () => {
     const products = await getProducts({});
@@ -11,8 +15,9 @@ const page = async () => {
     const carouselProducts = [...products];
     return (
         <>
-            <section className="relative isolate overflow-hidden">
-                <div className="bg-white">
+            <Navbar />
+            <main>
+                <section className="relative bg-dusk-200/30 isolate overflow-hidden">
                     <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
                         <h2 className="text-2xl font-bold tracking-tight text-gray-900">
                             {" "}
@@ -23,7 +28,7 @@ const page = async () => {
                             {carouselProducts.map((product, i) => (
                                 <div
                                     key={`${product.handle}${i}`}
-                                    className="group relative p-2 hover:bg-gray-100 rounded-2xl hover:scale-[1.02] transition-all ease-in duration-75"
+                                    className="group relative p-2 hover:bg-gray-200/70 rounded-2xl hover:scale-[1.02] transition-all ease-in duration-75"
                                 >
                                     <div className="aspect-h-1 aspect-w-1 w-full overflow-hidden rounded-lg bg-gray-200 lg:aspect-none lg:h-80 ">
                                         <Image
@@ -57,10 +62,10 @@ const page = async () => {
                             ))}
                         </div>
                     </div>
-                </div>
-            </section>
+                </section>
+            </main>
+            <Footer />
         </>
-
     );
 }
 
