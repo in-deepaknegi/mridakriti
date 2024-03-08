@@ -1,78 +1,21 @@
 import { MetadataRoute } from 'next'
 
+const BASE_URL = 'https://www.mridakriti.com'
+const urls = [
+    `${BASE_URL}`,
+    `${BASE_URL}/about`,
+    `${BASE_URL}/contacts`,
+]
+
 export default function sitemap(): MetadataRoute.Sitemap {
-    return [
-        {
-            url: 'https://www.mridakriti.com',
-            lastModified: new Date(),
-            changeFrequency: 'yearly',
-            priority: 1,
-        },
-        {
-            url: 'https://www.mridakriti.com/about',
-            lastModified: new Date(),
-            changeFrequency: 'monthly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://www.mridakriti.com/contacts',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://www.mridakriti.com/login',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://www.mridakriti.com/signup',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.9,
-        },
-        {
-            url: 'https://www.mridakriti.com/cart',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://www.mridakriti.com/product?id=1',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://www.mridakriti.com/product?id=2',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://www.mridakriti.com/product?id=3',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://www.mridakriti.com/product?id=4',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://www.mridakriti.com/booking/ram-mandir',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-        {
-            url: 'https://www.mridakriti.com/upcoming/product?id=220124',
-            lastModified: new Date(),
-            changeFrequency: 'weekly',
-            priority: 0.8,
-        },
-    ]
+    console.log(urls.length);
+
+    const allUrls: MetadataRoute.Sitemap = urls.map((url) => ({
+        url,
+        lastModified: new Date(),
+        changeFrequency: 'weekly',
+        priority: url === `${BASE_URL}` ? 1 : 0.8,
+    }));
+
+    return allUrls;
 }

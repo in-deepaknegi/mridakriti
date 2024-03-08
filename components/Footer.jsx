@@ -16,44 +16,49 @@ const Footer = () => {
                             Mridakriti
                         </span>
                     </a>
-                    <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-olive-400 sm:mb-0 ">
+                    <ul className="flex flex-wrap items-center mb-6 text-sm font-medium text-dusk-400 sm:mb-0 ">
                         <li>
-                            <a href="#" className="hover:text-olive-200 me-4 md:me-6">
+                            <a href="/about" className="hover:text-dusk-200 me-4 md:me-6">
                                 About
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-olive-200 me-4 md:me-6">
+                            <a href="/privacy" className="hover:text-dusk-200 me-4 md:me-6">
                                 Privacy Policy
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-olive-200 me-4 md:me-6">
-                                Licensing
+                            <a href="/terms" className="hover:text-dusk-200 me-4 md:me-6">
+                                Terms and Conditions
                             </a>
                         </li>
                         <li>
-                            <a href="#" className="hover:text-olive-200">
-                                Contact
+                            <a href="/shipping" className="hover:text-dusk-200 me-4 md:me-6">
+                                Shipping
+                            </a>
+                        </li>
+                        <li>
+                            <a href="/cancellation" className="hover:text-dusk-200 me-4 md:me-6">
+                                Cancellation
                             </a>
                         </li>
                     </ul>
                 </div>
 
-                <span className="block text-sm text-olive-400 sm:text-right dark:text-gray-400">
+                <span className="block text-sm text-dusk-400 sm:text-right dark:text-gray-400">
                     © 2024{" "}
-                    <a href="/" className="hover:text-olive-200">
+                    <a href="/" className="hover:text-dusk-200">
                         Mridakriti™
                     </a>
                     . All Rights Reserved.
                 </span>
 
-                <span className="mt-2 block text-xs text-olive-400 sm:text-right dark:text-gray-400">
+                <span className="mt-2 block text-xs text-dusk-400 sm:text-right dark:text-gray-400">
                     Designed by:{" "}
                     <a
                         target="_blank"
                         href="https://www.deepaknegi.in/"
-                        className="hover:text-olive-200"
+                        className="hover:text-dusk-200"
                     >
                         Deepak Negi
                     </a>

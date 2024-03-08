@@ -54,7 +54,7 @@ const features = [
 
 const Feature = () => {
     return (
-        <section className="relative bg-olive-200 py-16 sm:py-20">
+        <section className="relative bg-dusk-200/60 py-16 sm:py-20">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto flex flex-col lg:gap-y-0 gap-x-0 gap-y-10 lg:gap-x-8 lg:flex-row h-full">
                     <div className="w-full lg:order-first order-last">
@@ -68,7 +68,7 @@ const Feature = () => {
                         <div className="mt-5 grid gap-y-10 max-w-xl text-base leading-7 text-gray-600 md:gap-y-0 md:gap-x-4 md:grid-cols-2 lg:max-w-none">
                             {features.map((feature) => (
                                 <div key={feature.name}>
-                                    <div className="flex gap-4 text-olive-900">
+                                    <div className="flex gap-4 text-dusk-900">
                                         {feature.svg}
                                         <h2 className="my-auto text-2x font-semibold">
                                             {feature.name}

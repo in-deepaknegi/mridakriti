@@ -9,7 +9,7 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        'olive': {
+        'dusk': {
           100: '#fafafa',
           200: '#eaeaea',
           300: '#999',
