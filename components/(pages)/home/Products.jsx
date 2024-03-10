@@ -3,23 +3,30 @@ import React from "react";
 import Link from "next/link";
 import Image from "next/image";
 
+
 const products = async () => {
     const products = await getProducts({});
 
     if (!products?.length) return null;
 
     const carouselProducts = [...products];
+
     return (
         <>
             <section className="relative bg-dusk-200/30 isolate overflow-hidden">
                 <div className="mx-auto max-w-2xl px-4 py-16 sm:px-6 sm:py-24 lg:max-w-7xl lg:px-8">
-                    <h2 className="text-2xl font-bold tracking-tight text-gray-900">
-                        {" "}
-                        Customers also purchased{" "}
-                    </h2>
+                    <div className="flex justify-between items-center">
+                        <h2 className="text-2xl font-bold tracking-tight text-gray-900">
+                            {" "}
+                            Customers also purchased{" "}
+                        </h2>
+                        <Link href={'/paintings'} className="font-semibold text-sm">
+                            Explore more paintings{" "}<span aria-hidden="true">→</span>
+                        </Link>
+                    </div>
 
                     <div className="mt-6 grid grid-cols-1 gap-x-3 gap-y-10 sm:grid-cols-2 lg:grid-cols-4">
-                        {carouselProducts.slice(0, 2).map((product, i) => (
+                        {carouselProducts.slice(0, 4).map((product, i) => (
                             <div
                                 key={`${product.handle}${i}`}
                                 className="group relative p-2 hover:bg-gray-100 rounded-2xl hover:scale-[1.02] transition-all ease-in duration-75"
@@ -36,7 +43,7 @@ const products = async () => {
                                 <div className="mt-4 flex justify-between">
                                     <div>
                                         <h3 className="text-lg font-semibold text-gray-800">
-                                            <a href={product.handle}>
+                                            <a href={`/painting/${product.handle}`}>
                                                 <span
                                                     aria-hidden="true"
                                                     className="absolute inset-0"

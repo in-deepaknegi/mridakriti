@@ -2,7 +2,7 @@ import { HIDDEN_PRODUCT_TAG, SHOPIFY_GRAPHQL_API_ENDPOINT, TAGS } from "../const
 
 import { ensureStartsWith } from "../utils";
 import { isShopifyError } from "../type-guards";
-import { getProductsQuery } from "./queries/products";
+import { getProductQuery, getProductsQuery } from "./queries/product";
 import {
     Cart,
     Collection,
@@ -117,20 +117,20 @@ const reshapeProducts = (products: ShopifyProduct[]) => {
 
 const removeEdgesAndNodes = (array: Connection<any>) => {
     return array.edges.map((edge) => edge?.node);
-  };
-  
+};
+
 
 const reshapeImages = (images: Connection<Image>, productTitle: string) => {
     const flattened = removeEdgesAndNodes(images);
-  
+
     return flattened.map((image) => {
-      const filename = image.url.match(/.*\/(.*)\..*/)[1];
-      return {
-        ...image,
-        altText: image.altText || `${productTitle} - ${filename}`
-      };
+        const filename = image.url.match(/.*\/(.*)\..*/)[1];
+        return {
+            ...image,
+            altText: image.altText || `${productTitle} - ${filename}`
+        };
     });
-  };
+};
 
 const reshapeProduct = (product: ShopifyProduct, filterHiddenProducts: boolean = true) => {
     if (!product || (filterHiddenProducts && product.tags.includes(HIDDEN_PRODUCT_TAG))) {
@@ -145,6 +145,18 @@ const reshapeProduct = (product: ShopifyProduct, filterHiddenProducts: boolean =
         variants: removeEdgesAndNodes(variants)
     };
 };
+
+export async function getProduct(handle: string): Promise<Product | undefined> {
+    const res = await shopifyFetch<ShopifyProductOperation>({
+        query: getProductQuery,
+        tags: [TAGS.products],
+        variables: {
+            handle
+        }
+    });
+
+    return reshapeProduct(res.body.data.product, false);
+}
 
 export async function getProducts({
     query,
@@ -176,24 +188,23 @@ export async function revalidate(req: NextRequest): Promise<NextResponse> {
     const secret = req.nextUrl.searchParams.get('secret');
     const isCollectionUpdate = collectionWebhooks.includes(topic);
     const isProductUpdate = productWebhooks.includes(topic);
-  
+
     if (!secret || secret !== process.env.SHOPIFY_REVALIDATION_SECRET) {
-      console.error('Invalid revalidation secret.');
-      return NextResponse.json({ status: 200 });
+        console.error('Invalid revalidation secret.');
+        return NextResponse.json({ status: 200 });
     }
-  
+
     if (!isCollectionUpdate && !isProductUpdate) {
-      return NextResponse.json({ status: 200 });
+        return NextResponse.json({ status: 200 });
     }
-  
+
     if (isCollectionUpdate) {
-      revalidateTag(TAGS.collections);
+        revalidateTag(TAGS.collections);
     }
-  
+
     if (isProductUpdate) {
-      revalidateTag(TAGS.products);
+        revalidateTag(TAGS.products);
     }
-  
+
     return NextResponse.json({ status: 200, revalidated: true, now: Date.now() });
-  }
-  
+}
