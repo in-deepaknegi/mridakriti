@@ -2,6 +2,9 @@ import React from 'react'
 import type { Metadata } from 'next'
 import Navbar from '@/components/Navbar'
 import Footer from '@/components/Footer'
+import Hero from '@/components/(pages)/about/Hero'
+import Hiw from '@/components/(pages)/home/Hiw'
+import Newsletter from '@/components/Newsletter'
 
 export const metadata: Metadata = {
     title: 'About | Mridakriti',
@@ -11,8 +14,13 @@ export const metadata: Metadata = {
 const page = () => {
     return (
         <>
-            <Navbar/>
-            <Footer/>
+            <Navbar />
+            <main>
+                <Hero />
+                <Hiw />
+                <Newsletter />
+            </main>
+            <Footer />
         </>
     )
 }

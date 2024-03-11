@@ -33,7 +33,7 @@ const Hiw = () => {
                             The process of creating soil painting
                         </h2>
 
-                        <p className='mt-4 max-w-xl text-left text-sm text-gray-700 sm:text-base'>
+                        <p className='mt-4 max-w-xl text-base text-gray-800 md:text-lg'>
                             Creating soil paintings is an artistic journey rooted in nature&apos;s palette.  The result is a stunning portrayal of nature&apos;s essence, where each stroke captures the beauty of the earth in a truly one-of-a-kind creation.
                         </p>
                     </div>

@@ -6,8 +6,8 @@ import Logo from "@/public/logo.png";
 const links = [
     {
         id: 1,
-        title: "Products",
-        url: "/products",
+        title: "Paintings",
+        url: "/paintings",
     },
     {
         id: 2,
@@ -100,13 +100,13 @@ const Navbar = () => {
                         </a>
                     </div>
                     <div className="flex ml-10">
-                        {mobilemenu ? (
-                            <button
-                                onClick={toggleMobileMenu}
-                                type="button"
-                                className="-m-2.5 rounded-md p-4 text-gray-900"
-                            >
-                                <span className="sr-only">Close menu</span>
+                        <button
+                            onClick={toggleMobileMenu}
+                            type="button"
+                            className="-m-2.5 rounded-md p-4 text-gray-900"
+                        >
+                            <span className="sr-only">Close menu</span>
+                            {mobilemenu ? (
                                 <svg
                                     className="h-6 w-6"
                                     fill="none"
@@ -121,14 +121,7 @@ const Navbar = () => {
                                         d="M6 18L18 6M6 6l12 12"
                                     />
                                 </svg>
-                            </button>
-                        ) : (
-                            <button
-                                onClick={toggleMobileMenu}
-                                type="button"
-                                className="-m-2.5 rounded-md p-4 text-gray-900"
-                            >
-                                <span className="sr-only">Open main menu</span>
+                            ) : (
                                 <svg
                                     xmlns="http://www.w3.org/2000/svg"
                                     width="24"
@@ -144,8 +137,8 @@ const Navbar = () => {
                                     <line x1="15" x2="3" y1="12" y2="12" />
                                     <line x1="17" x2="3" y1="18" y2="18" />
                                 </svg>
-                            </button>
-                        )}
+                            )}
+                        </button>
                     </div>
                 </div>
             </nav>
