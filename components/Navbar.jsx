@@ -31,14 +31,18 @@ const Navbar = () => {
     return (
         <header className="relative isolate z-10">
             <nav>
-                <div className="bg-dusk-200/30 border-b border-dusk-300/50 flex items-center justify-between px-6 py-3 md:py-4 lg:px-8">
+                <div className="flex items-center justify-between border-b border-dusk-300/50 bg-dusk-200/30 px-6 py-3 md:py-4 lg:px-8">
                     <div className="flex lg:flex-none">
                         <a
                             href="/"
-                            className="-m-1.5 p-1.5 flex gap-2 text-2xl font-mediumn text-dusk-900"
+                            className="font-mediumn -m-1.5 flex gap-2 p-1.5 text-2xl text-dusk-900"
                         >
-                            <Image src={Logo} alt="site-logo" className="w-10 h-10 md:w-12 md:h-12" />
-                            <span className="hidden my-auto md:block">Mridakriti</span>
+                            <Image
+                                src={Logo}
+                                alt="site-logo"
+                                className="h-10 w-10 md:h-12 md:w-12"
+                            />
+                            <span className="my-auto hidden md:block">Mridakriti</span>
                         </a>
                     </div>
 
@@ -52,7 +56,7 @@ const Navbar = () => {
                                 strokeWidth="1.5"
                                 stroke="currentColor"
                                 aria-hidden="true"
-                                className="w-6 h-6 text-dusk-700"
+                                className="h-6 w-6 text-dusk-700"
                             >
                                 <path
                                     strokeLinecap="round"
@@ -70,7 +74,7 @@ const Navbar = () => {
                                 strokeWidth="1.5"
                                 stroke="currentColor"
                                 aria-hidden="true"
-                                className="w-6 h-6 text-dusk-700"
+                                className="h-6 w-6 text-dusk-700"
                             >
                                 <path
                                     strokeLinecap="round"
@@ -89,7 +93,7 @@ const Navbar = () => {
                                 strokeWidth="1.5"
                                 stroke="currentColor"
                                 aria-hidden="true"
-                                className="w-6 h-6 text-dusk-700"
+                                className="h-6 w-6 text-dusk-700"
                             >
                                 <path
                                     strokeLinecap="round"
@@ -99,7 +103,7 @@ const Navbar = () => {
                             </svg>
                         </a>
                     </div>
-                    <div className="flex ml-10">
+                    <div className="ml-10 flex">
                         <button
                             onClick={toggleMobileMenu}
                             type="button"
@@ -145,7 +149,7 @@ const Navbar = () => {
 
             {mobilemenu && (
                 <div className="" role="dialog" aria-modal="true">
-                    <div className="fixed inset-y-0 top-[5rem] right-0 overflow-y-auto px-6 py-10 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10 h-full w-full bg-dusk-100 bg-clip-padding backdrop-filter bg-opacity-70 backdrop-blur-md">
+                    <div className="fixed inset-y-0 right-0 top-[5rem] h-full w-full overflow-y-auto bg-dusk-100 bg-opacity-70 bg-clip-padding px-6 py-10 backdrop-blur-md backdrop-filter sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
                         <div className="flex items-center justify-between">
                             <a href="#" className="-m-1.5 p-1.5">
                                 <span className="sr-only">Your Company</span>
@@ -165,14 +169,14 @@ const Navbar = () => {
                                     ))}
                                 </div>
 
-                                <div className="py-6">
+                                {/* <div className="py-6">
                                     <a
                                         href="#"
                                         className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
                                     >
                                         Log in
                                     </a>
-                                </div>
+                                </div> */}
                             </div>
                         </div>
                     </div>

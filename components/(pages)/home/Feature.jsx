@@ -56,8 +56,8 @@ const Feature = () => {
     return (
         <section className="relative bg-dusk-200/60 py-16 sm:py-20">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
-                <div className="mx-auto flex flex-col lg:gap-y-0 gap-x-0 gap-y-10 lg:gap-x-8 lg:flex-row h-full">
-                    <div className="w-full lg:order-first order-last">
+                <div className="mx-auto flex h-full flex-col gap-x-0 gap-y-10 lg:flex-row lg:gap-x-8 lg:gap-y-0">
+                    <div className="order-last w-full lg:order-first">
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
                             Discover the Sacred Origins of Soil Paintings
                         </h2>
@@ -65,12 +65,12 @@ const Feature = () => {
                             Our soil paintings transcend the realm of art to become a profound
                             spiritual journey.
                         </p>
-                        <div className="mt-5 grid gap-y-10 max-w-xl text-base leading-7 text-gray-600 md:gap-y-0 md:gap-x-4 md:grid-cols-2 lg:max-w-none">
+                        <div className="mt-5 grid max-w-xl gap-y-10 text-base leading-7 text-gray-600 md:grid-cols-2 md:gap-x-4 md:gap-y-0 lg:max-w-none">
                             {features.map((feature) => (
                                 <div key={feature.name}>
                                     <div className="flex gap-4 text-dusk-900">
                                         {feature.svg}
-                                        <h2 className="my-auto text-2x font-semibold">
+                                        <h2 className="text-2x my-auto font-semibold">
                                             {feature.name}
                                         </h2>
                                     </div>
@@ -80,21 +80,21 @@ const Feature = () => {
                         </div>
                         <div className="mt-6 flex gap-x-6">
                             <a
-                                href="#"
-                                className="rounded-md px-3.5 py-2.5 text-sm font-semibold shadow-sm text-white bg-soil-100 hover:bg-soil-200"
+                                href="/paintings"
+                                className="rounded-md bg-soil-100 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-soil-200"
                             >
                                 Explore paintings
                             </a>
                             <a
-                                href="#"
-                                className="text-sm font-semibold leading-6 text-gray-900 my-auto"
+                                href="/about"
+                                className="my-auto text-sm font-semibold leading-6 text-gray-900"
                             >
-                                Join with us<span aria-hidden="true">→</span>
+                                Know about us<span aria-hidden="true">→</span>
                             </a>
                         </div>
                     </div>
                     <div
-                        className="relative lg:order-last order-first w-full h-auto"
+                        className="relative order-first h-auto w-full lg:order-last"
                         data-aos="zoom-out"
                         data-aos-duration="700"
                     >
@@ -103,7 +103,7 @@ const Feature = () => {
                             alt="Product screenshot"
                             quality={100}
                             loading="eager"
-                            className="w-full h-full aspect-video object-cover rounded-2xl"
+                            className="aspect-video h-full w-full rounded-2xl object-cover"
                         />
                     </div>
                 </div>

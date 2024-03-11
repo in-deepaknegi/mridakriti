@@ -1,26 +1,25 @@
-"use client"
-import React, { useState } from 'react'
-import Image from 'next/image';
-import { Product } from '@/lib/shopify/types';
+"use client";
+import React, { useState } from "react";
+import Image from "next/image";
+import { Product } from "@/lib/shopify/types";
 
-export const runtime = 'edge';
+export const runtime = "edge";
 
 const Overview = ({ product }: { product: Product }) => {
-
     // console.log(product)
 
     const [selectedImage, setSelectedImage] = useState(product.featuredImage.url);
 
     const handleImageClick = (image: any) => {
-        setSelectedImage(image)
-    }
+        setSelectedImage(image);
+    };
 
     return (
         <section className="relative isolate bg-dusk-200/30 py-8 md:py-16">
             <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
                 <div className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-8">
-                    <div className="lg:col-span-7 flex space-x-6">
-                        <div className="mx-auto w-full hidden max-w-[8rem] lg:block">
+                    <div className="flex space-x-6 lg:col-span-7">
+                        <div className="mx-auto hidden w-full max-w-[8rem] lg:block">
                             <div className="grid grid-rows-4 gap-6">
                                 {product.images.map((image, i) => (
                                     <button
@@ -60,7 +59,7 @@ const Overview = ({ product }: { product: Product }) => {
                             width={1080}
                             height={680}
                             alt="hero1"
-                            className="lg:mb-0 mb-10 lg:hidden block h-full w-full overflow-clip rounded-lg object-cover object-center"
+                            className="mb-10 block h-full w-full overflow-clip rounded-lg object-cover object-center lg:mb-0 lg:hidden"
                         />
                         <h2 className="text-3xl font-bold tracking-tight text-gray-900">
                             {product.title}
@@ -75,21 +74,45 @@ const Overview = ({ product }: { product: Product }) => {
                             <h3 className="sr-only absolute">Reviews</h3>
                             <div className="flex items-center">
                                 {[...Array(4)].map((_, index) => (
-                                    <svg key={index} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className='w-5 h-5 text-blue-600'><path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd"></path></svg>
+                                    <svg
+                                        key={index}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        aria-hidden="true"
+                                        className="h-5 w-5 text-blue-600"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                            clipRule="evenodd"
+                                        ></path>
+                                    </svg>
                                 ))}
                                 {[...Array(1)].map((_, index) => (
-                                    <svg key={index} xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20" fill="currentColor" aria-hidden="true" className='w-5 h-5 text-gray-300'><path fillRule="evenodd" d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z" clipRule="evenodd"></path></svg>
+                                    <svg
+                                        key={index}
+                                        xmlns="http://www.w3.org/2000/svg"
+                                        viewBox="0 0 20 20"
+                                        fill="currentColor"
+                                        aria-hidden="true"
+                                        className="h-5 w-5 text-gray-300"
+                                    >
+                                        <path
+                                            fillRule="evenodd"
+                                            d="M10.868 2.884c-.321-.772-1.415-.772-1.736 0l-1.83 4.401-4.753.381c-.833.067-1.171 1.107-.536 1.651l3.62 3.102-1.106 4.637c-.194.813.691 1.456 1.405 1.02L10 15.591l4.069 2.485c.713.436 1.598-.207 1.404-1.02l-1.106-4.637 3.62-3.102c.635-.544.297-1.584-.536-1.65l-4.752-.382-1.831-4.401z"
+                                            clipRule="evenodd"
+                                        ></path>
+                                    </svg>
                                 ))}
                             </div>
                         </div>
                         <div className="mt-6">
                             <h3 className="sr-only absolute">Description</h3>
-                            <p className="text-md text-gray-700">
-                                {product.description}
-                            </p>
+                            <p className="text-md text-gray-700">{product.description}</p>
                         </div>
                         <div className="mt-10 flex">
-                            <button className="flex max-w-[10rem] flex-1 items-center justify-center rounded-lg border border-transparent bg-soil-300 hover:bg-soil-400 px-6 py-3 text-base text-white sm:w-full">
+                            <button className="flex max-w-[10rem] flex-1 items-center justify-center rounded-lg border border-transparent bg-soil-300 px-6 py-3 text-base text-white hover:bg-soil-400 sm:w-full">
                                 Add to bag
                             </button>
                             <button className="ml-4 flex items-center justify-center rounded-md px-3 text-gray-400">
@@ -176,7 +199,7 @@ const Overview = ({ product }: { product: Product }) => {
                 </div>
             </div>
         </section>
-    )
-}
+    );
+};
 
-export default Overview
+export default Overview;
