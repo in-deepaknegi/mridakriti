@@ -119,7 +119,6 @@ const removeEdgesAndNodes = (array: Connection<any>) => {
     return array.edges.map((edge) => edge?.node);
 };
 
-
 const reshapeImages = (images: Connection<Image>, productTitle: string) => {
     const flattened = removeEdgesAndNodes(images);
 
