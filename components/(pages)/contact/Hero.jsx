@@ -35,8 +35,8 @@ const Form = () => {
                                     <path d="M10 18h4" />
                                 </svg>
                                 <dd>
-                                    72, Araghar, Haridwar Rd <br />
-                                    Dharampur, Dehradun <br />
+                                    2nd Floor, Building no. 72, Tapping<br />
+                                    Araghar, Dharampur, Dehradun <br />
                                     Uttarakhand 244712
                                 </dd>
                             </div>
@@ -58,7 +58,7 @@ const Form = () => {
                                 <dd>
                                     <a href="tel:+91 95572 2064">+91 95572 20641</a>
                                     <span className=" mx-3 border-l border-gray-800"></span>
-                                    <a href="tel:+91 95572 2064">+91 95572 20641</a>
+                                    <a href="tel:+91 95572 2064">+91 82733 81711</a>
                                 </dd>
                             </div>
                             <div className="flex gap-6">
