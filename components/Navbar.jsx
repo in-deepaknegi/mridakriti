@@ -1,7 +1,9 @@
-"use client";
 import Image from "next/image";
-import React, { useState } from "react";
+import { Suspense } from "react";
+import React from "react";
 import Logo from "@/public/logo.png";
+import Cart from "./cart";
+import OpenCart from "./cart/open-cart";
 
 const links = [
     {
@@ -22,11 +24,11 @@ const links = [
 ];
 
 const Navbar = () => {
-    const [mobilemenu, setMobileMenu] = useState(false);
+    // const [mobilemenu, setMobileMenu] = useState(false);
 
-    const toggleMobileMenu = () => {
-        setMobileMenu(!mobilemenu);
-    };
+    // const toggleMobileMenu = () => {
+    //     setMobileMenu(!mobilemenu);
+    // };
 
     return (
         <header className="relative isolate z-10">
@@ -84,32 +86,20 @@ const Navbar = () => {
                             </svg>
                         </a>
                         <span className="h-5 w-[1px] bg-dusk-900"></span>
-                        <a href="#" className="flex gap-1">
-                            <span className="sr-only">Cart</span>
-                            <svg
-                                xmlns="http://www.w3.org/2000/svg"
-                                fill="none"
-                                viewBox="0 0 24 24"
-                                strokeWidth="1.5"
-                                stroke="currentColor"
-                                aria-hidden="true"
-                                className="h-6 w-6 text-dusk-700"
-                            >
-                                <path
-                                    strokeLinecap="round"
-                                    strokeLinejoin="round"
-                                    d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 00-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 00-16.536-1.84M7.5 14.25L5.106 5.272M6 20.25a.75.75 0 11-1.5 0 .75.75 0 011.5 0zm12.75 0a.75.75 0 11-1.5 0 .75.75 0 011.5 0z"
-                                ></path>
-                            </svg>
-                        </a>
+                        <div className="flex justify-end">
+                            <Suspense fallback={<OpenCart />}>
+                                <Cart />
+                            </Suspense>
+                        </div>
+                       
                     </div>
                     <div className="ml-10 flex">
                         <button
-                            onClick={toggleMobileMenu}
+                            // onClick={toggleMobileMenu}
                             type="button"
                             className="-m-2.5 rounded-md p-4 text-gray-900"
                         >
-                            <span className="sr-only">Close menu</span>
+                            {/* <span className="sr-only">Close menu</span>
                             {mobilemenu ? (
                                 <svg
                                     className="h-6 w-6"
@@ -141,47 +131,12 @@ const Navbar = () => {
                                     <line x1="15" x2="3" y1="12" y2="12" />
                                     <line x1="17" x2="3" y1="18" y2="18" />
                                 </svg>
-                            )}
+                            )} */}
                         </button>
                     </div>
                 </div>
             </nav>
 
-            {mobilemenu && (
-                <div className="" role="dialog" aria-modal="true">
-                    <div className="fixed inset-y-0 right-0 top-[5rem] h-full w-full overflow-y-auto bg-dusk-100 bg-opacity-70 bg-clip-padding px-6 py-10 backdrop-blur-md backdrop-filter sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
-                        <div className="flex items-center justify-between">
-                            <a href="#" className="-m-1.5 p-1.5">
-                                <span className="sr-only">Your Company</span>
-                            </a>
-                        </div>
-                        <div className="mt-6 flow-root">
-                            <div className="-my-6 divide-y divide-gray-500/10">
-                                <div className="space-y-2 py-6">
-                                    {links.map((link) => (
-                                        <a
-                                            key={link.id}
-                                            href={link.url}
-                                            className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-white"
-                                        >
-                                            {link.title}
-                                        </a>
-                                    ))}
-                                </div>
-
-                                {/* <div className="py-6">
-                                    <a
-                                        href="#"
-                                        className="-mx-3 block rounded-lg px-3 py-2.5 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50"
-                                    >
-                                        Log in
-                                    </a>
-                                </div> */}
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            )}
         </header>
     );
 };

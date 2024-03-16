@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import Image from "next/image";
 import { Product } from "@/lib/shopify/types";
 import { VariantSelector } from "./variant-selector";
+import { AddToCart } from "@/components/cart/add-to-cart";
 
 export const runtime = "edge";
 
@@ -114,14 +115,13 @@ const Overview = ({ product }: { product: Product }) => {
                             <h3 className="sr-only absolute">Description</h3>
                             <p className="text-md text-gray-700">{product.description}</p>
                         </div>
-                       
+
                         <VariantSelector options={product.options} variants={product.variants} />
 
 
                         <div className="mt-10 flex">
-                            <button className="flex max-w-[10rem] flex-1 items-center justify-center rounded-lg border border-transparent bg-soil-300 px-6 py-3 text-base text-white hover:bg-soil-400 sm:w-full">
-                                Add to bag
-                            </button>
+                            <AddToCart variants={product.variants} availableForSale={product.availableForSale} />
+
                             <button className="ml-4 flex items-center justify-center rounded-md px-3 text-gray-400">
                                 <span className="sr-only">Add to favourites</span>
                                 <svg
