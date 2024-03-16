@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import { Product } from "@/lib/shopify/types";
+import { VariantSelector } from "./variant-selector";
 
 export const runtime = "edge";
 
@@ -70,6 +71,7 @@ const Overview = ({ product }: { product: Product }) => {
                                 {product.priceRange.maxVariantPrice.amount}
                             </p>
                         </div>
+
                         <div className="mt-3">
                             <h3 className="sr-only absolute">Reviews</h3>
                             <div className="flex items-center">
@@ -107,10 +109,15 @@ const Overview = ({ product }: { product: Product }) => {
                                 ))}
                             </div>
                         </div>
+
                         <div className="mt-6">
                             <h3 className="sr-only absolute">Description</h3>
                             <p className="text-md text-gray-700">{product.description}</p>
                         </div>
+                       
+                        <VariantSelector options={product.options} variants={product.variants} />
+
+
                         <div className="mt-10 flex">
                             <button className="flex max-w-[10rem] flex-1 items-center justify-center rounded-lg border border-transparent bg-soil-300 px-6 py-3 text-base text-white hover:bg-soil-400 sm:w-full">
                                 Add to bag

@@ -33,7 +33,7 @@ const page = () => {
 
                     <h3 className="text-xl font-semibold mb-2">Delivery Time:</h3>
                     <p className="mb-4">
-                        Estimated delivery times vary depending on the shipping method selected and the destination. Please refer to the shipping carrier&apos;s website for more information on delivery times.
+                        Estimated delivery times vary depending on the shipping method selected and the destination. Delivey time can range between 2 days (minimum) to 10 days (maximum). Please refer to the shipping carrier&apos;s website for more information on delivery times.
                     </p>
 
                     <h3 className="text-xl font-semibold mb-2">International Shipping:</h3>
