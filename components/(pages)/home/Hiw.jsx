@@ -29,7 +29,7 @@ const steps = [
 
 const Hiw = () => {
     return (
-        <section className="relative bg-dusk-200/60  py-16 lg:py-24">
+        <section className="relative bg-dusk-200/30  py-16 lg:py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="relative isolate flex flex-col lg:flex-row">
                     <div className="max-w-xl">

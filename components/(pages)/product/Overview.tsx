@@ -15,7 +15,7 @@ const Overview = ({ product }: { product: Product }) => {
     };
 
     return (
-        <section className="relative isolate bg-dusk-200/30 py-8 md:py-16">
+        <section className="relative isolate bg-dusk-100/30 py-8 md:py-16">
             <div className="mx-auto max-w-2xl px-4 sm:px-6 lg:max-w-7xl lg:px-8">
                 <div className="lg:grid lg:grid-cols-12 lg:items-start lg:gap-x-8">
                     <div className="flex space-x-6 lg:col-span-7">

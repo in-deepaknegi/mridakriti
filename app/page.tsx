@@ -7,7 +7,7 @@ import Feature from '@/components/(pages)/home/Feature'
 import Products from '@/components/(pages)/home/Products'
 import Hiw from '@/components/(pages)/home/Hiw'
 
-export const runtime = 'edge';
+// export const runtime = 'edge';
 
 export default function Home() {
 

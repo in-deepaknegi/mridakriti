@@ -2,7 +2,7 @@ import React from "react";
 
 const Newsletter = () => {
     return (
-        <section className="relative bg-dusk-200/30 py-20 lg:py-24">
+        <section className="relative bg-dusk-100/30 py-20 lg:py-24">
             <div className="mx-auto max-w-7xl px-6 lg:px-8">
                 <div className="relative isolate overflow-hidden">
                     <h2 className="mx-auto max-w-2xl text-3xl font-bold tracking-wide text-dusk-800 sm:text-4xl md:text-center">

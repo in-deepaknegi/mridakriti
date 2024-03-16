@@ -60,10 +60,10 @@ const Footer = () => {
                     Designed by:{" "}
                     <a
                         target="_blank"
-                        href="https://www.deepaknegi.in/"
+                        href="https://www.cnippet.in/"
                         className="hover:text-dusk-200"
                     >
-                        Deepak Negi
+                        Cnippet
                     </a>
                 </span>
             </div>

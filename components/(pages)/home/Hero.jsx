@@ -10,7 +10,7 @@ import "swiper/css";
 import "swiper/css/effect-fade";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
-import { EffectFade, Autoplay, Navigation, Pagination } from "swiper/modules";
+import { EffectFade, Autoplay, Navigation } from "swiper/modules";
 
 const images = [
     {
@@ -27,20 +27,20 @@ const images = [
 
 const Hero = () => {
     return (
-        <section className="relative isolate overflow-hidden bg-dusk-200/30">
-            <div className="mx-auto my-10 max-w-full px-6 lg:px-20 ">
+        <section className="relative isolate overflow-hidden bg-dusk-100/30">
+            <div className="mx-auto my-6 max-h-screen max-w-full px-6 lg:px-20 ">
                 <div className="relative isolate h-full w-full">
                     <Swiper
                         spaceBetween={30}
-                        effect={"coverflow"}
-                        speed={1500}
+                        effect={"fade"}
+                        speed={2000}
                         autoplay={{
                             delay: 2000,
                             disableOnInteraction: false,
                         }}
                         loop={true}
                         modules={[Autoplay, EffectFade, Navigation]}
-                        className="rounded-2xl"
+                        className="rounded-2xl h-[82vh]"
                     >
                         {images.map((image) => (
                             <SwiperSlide key={image.id}>

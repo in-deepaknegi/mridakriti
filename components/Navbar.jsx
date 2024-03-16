@@ -31,7 +31,7 @@ const Navbar = () => {
     return (
         <header className="relative isolate z-10">
             <nav>
-                <div className="flex items-center justify-between border-b border-dusk-300/50 bg-dusk-200/30 px-6 py-3 md:py-4 lg:px-8">
+                <div className="flex items-center justify-between border-b border-dusk-300/50 bg-dusk-100/30 px-6 py-3 md:py-4 lg:px-8">
                     <div className="flex lg:flex-none">
                         <a
                             href="/"

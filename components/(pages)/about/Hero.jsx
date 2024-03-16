@@ -18,7 +18,7 @@ const features = [{
 
 const Feature = () => {
     return (
-        <section className="relative bg-dusk-200/30 py-7 sm:py-8">
+        <section className="relative bg-dusk-100/30 py-7 sm:py-8">
             <h1 className="text-center text-5xl font-semibold">About Us</h1>
             <div className="mx-auto mt-16 max-w-7xl px-6 lg:px-8">
                 <div className="mx-auto flex h-full flex-col gap-x-0 gap-y-10 lg:flex-row lg:gap-x-8 lg:gap-y-0">
