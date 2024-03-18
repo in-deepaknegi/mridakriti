@@ -137,6 +137,37 @@ const reshapeCart = (cart: ShopifyCart): Cart => {
     };
 };
 
+const removeEdgesAndNodes = (array: Connection<any>) => {
+    return array.edges.map((edge) => edge?.node);
+};
+
+const reshapeImages = (images: Connection<Image>, productTitle: string) => {
+    const flattened = removeEdgesAndNodes(images);
+
+    return flattened.map((image) => {
+        const filename = image.url.match(/.*\/(.*)\..*/)[1];
+        return {
+            ...image,
+            altText: image.altText || `${productTitle} - ${filename}`
+        };
+    });
+};
+
+const reshapeProduct = (product: ShopifyProduct, filterHiddenProducts: boolean = true) => {
+    if (!product || (filterHiddenProducts && product.tags.includes(HIDDEN_PRODUCT_TAG))) {
+        return undefined;
+    }
+
+    const { images, variants, ...rest } = product;
+
+    return {
+        ...rest,
+        images: reshapeImages(images, product.title),
+        variants: removeEdgesAndNodes(variants)
+    };
+};
+
+
 export async function createCart(): Promise<Cart> {
     const res = await shopifyFetch<ShopifyCreateCartOperation>({
         query: createCartMutation,
@@ -205,36 +236,6 @@ export async function getCart(cartId: string): Promise<Cart | undefined> {
 
     return reshapeCart(res.body.data.cart);
 }
-
-const removeEdgesAndNodes = (array: Connection<any>) => {
-    return array.edges.map((edge) => edge?.node);
-};
-
-const reshapeImages = (images: Connection<Image>, productTitle: string) => {
-    const flattened = removeEdgesAndNodes(images);
-
-    return flattened.map((image) => {
-        const filename = image.url.match(/.*\/(.*)\..*/)[1];
-        return {
-            ...image,
-            altText: image.altText || `${productTitle} - ${filename}`
-        };
-    });
-};
-
-const reshapeProduct = (product: ShopifyProduct, filterHiddenProducts: boolean = true) => {
-    if (!product || (filterHiddenProducts && product.tags.includes(HIDDEN_PRODUCT_TAG))) {
-        return undefined;
-    }
-
-    const { images, variants, ...rest } = product;
-
-    return {
-        ...rest,
-        images: reshapeImages(images, product.title),
-        variants: removeEdgesAndNodes(variants)
-    };
-};
 
 export async function getProduct(handle: string): Promise<Product | undefined> {
     const res = await shopifyFetch<ShopifyProductOperation>({

@@ -7,10 +7,7 @@ import Feature from '@/components/(pages)/home/Feature'
 import Products from '@/components/(pages)/home/Products'
 import Hiw from '@/components/(pages)/home/Hiw'
 
-// export const runtime = 'edge';
-// export const dynamic = 'force-static';
-
-export const revalidate = 60;
+export const runtime = 'edge';
 
 export default function Home() {
 
