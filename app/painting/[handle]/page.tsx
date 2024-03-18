@@ -1,6 +1,6 @@
 import { getProduct } from "@/lib/shopify";
 import { notFound } from "next/navigation";
-import { Suspense, useState } from "react";
+import { Suspense, cache } from "react";
 
 export const runtime = 'edge';
 
@@ -10,8 +10,13 @@ import Overview from '@/components/(pages)/product/Overview';
 import { Metadata } from "next";
 import { HIDDEN_PRODUCT_TAG } from '@/lib/constants';
 
+const getProductCache = cache(async (handle: string) => {
+    const product = await getProduct(handle);
+    return product;
+});
+
 export default async function ProductPage({ params }: { params: { handle: string } }) {
-    const product = await getProduct(params.handle);
+    const product = await getProductCache(params.handle);
 
     if (!product) return notFound();
 
@@ -54,38 +59,38 @@ export default async function ProductPage({ params }: { params: { handle: string
 
 export async function generateMetadata({
     params
-  }: {
+}: {
     params: { handle: string };
-  }): Promise<Metadata> {
+}): Promise<Metadata> {
     const product = await getProduct(params.handle);
-  
+
     if (!product) return notFound();
-  
+
     const { url, width, height, altText: alt } = product.featuredImage || {};
     const indexable = !product.tags.includes(HIDDEN_PRODUCT_TAG);
-  
+
     return {
-      title: product.seo.title || product.title,
-      description: product.seo.description || product.description,
-      robots: {
-        index: indexable,
-        follow: indexable,
-        googleBot: {
-          index: indexable,
-          follow: indexable
-        }
-      },
-      openGraph: url
-        ? {
-            images: [
-              {
-                url,
-                width,
-                height,
-                alt
-              }
-            ]
-          }
-        : null
+        title: product.seo.title || product.title,
+        description: product.seo.description || product.description,
+        robots: {
+            index: indexable,
+            follow: indexable,
+            googleBot: {
+                index: indexable,
+                follow: indexable
+            }
+        },
+        openGraph: url
+            ? {
+                images: [
+                    {
+                        url,
+                        width,
+                        height,
+                        alt
+                    }
+                ]
+            }
+            : null
     };
-  }
+}

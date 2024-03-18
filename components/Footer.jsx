@@ -60,7 +60,7 @@ const Footer = () => {
                     Designed by:{" "}
                     <a
                         target="_blank"
-                        href="https://www.cnippet.in/"
+                        href="https://www.cnippet.com/"
                         className="hover:text-dusk-200"
                     >
                         Cnippet

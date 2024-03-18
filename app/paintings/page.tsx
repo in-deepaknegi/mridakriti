@@ -1,14 +1,18 @@
 import { getProducts } from "@/lib/shopify";
-import React from "react";
-import Link from "next/link";
+import React, { cache } from "react";
 import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
 export const runtime = 'edge';
 
+const getProductCache = cache(async () => {
+    const product = await getProducts({});
+    return product;
+});
+
 const page = async () => {
-    const products = await getProducts({});
+    const products = await getProductCache();
 
     if (!products?.length) return null;
 

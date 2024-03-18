@@ -1,7 +1,10 @@
 import { MetadataRoute } from "next";
+import { validateEnvironmentVariables } from "@/lib/utils";
 import { getProducts } from "@/lib/shopify";
 
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+
+    validateEnvironmentVariables();
 
     const BASE_URL = 'https://www.mridakriti.com'
 
@@ -10,6 +13,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     const urls = [
         `${BASE_URL}/about`,
         `${BASE_URL}/contacts`,
+        `${BASE_URL}/painting`,
         `${BASE_URL}/paintings`,
     ]
 
