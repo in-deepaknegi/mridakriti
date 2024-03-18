@@ -5,7 +5,7 @@ import Image from "next/image";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 
-export const runtime = 'edge';
+export const revalidate = 60;
 
 const page = async () => {
     const products = await getProducts({});

@@ -2,7 +2,7 @@ import { getProduct } from "@/lib/shopify";
 import { notFound } from "next/navigation";
 import { Suspense, useState } from "react";
 
-export const runtime = 'edge';
+export const revalidate = 60;
 
 import Footer from "@/components/Footer";
 import Navbar from "@/components/Navbar";
