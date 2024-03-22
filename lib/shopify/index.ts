@@ -167,7 +167,6 @@ const reshapeProduct = (product: ShopifyProduct, filterHiddenProducts: boolean =
     };
 };
 
-
 export async function createCart(): Promise<Cart> {
     const res = await shopifyFetch<ShopifyCreateCartOperation>({
         query: createCartMutation,
@@ -243,7 +242,8 @@ export async function getProduct(handle: string): Promise<Product | undefined> {
         tags: [TAGS.products],
         variables: {
             handle
-        }
+        },
+        cache: 'no-store'
     });
 
     return reshapeProduct(res.body.data.product, false);
@@ -265,7 +265,8 @@ export async function getProducts({
             query,
             reverse,
             sortKey
-        }
+        },
+        cache: 'no-store'
     });
 
     return reshapeProducts(removeEdgesAndNodes(res.body.data.products));
